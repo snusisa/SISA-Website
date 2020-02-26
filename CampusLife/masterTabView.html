@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=<device-width>, initial-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    </head>
+    <body>
+        <style>
+            html {
+                font-family: "helvetica neue", helvetica, arial, sans-serif;
+                position: relative;
+                overflow-y: hidden;
+                height: 100%;
+            }
+            table-body {
+                overflow-y: hidden;
+                min-height: fit-content;
+            }
+            table {
+                table-layout: fixed;
+                border-collapse: collapse;
+                vertical-align: middle;
+                font-size: 12px;
+                text-align: center;
+                width: 100%;
+            }
+            th {
+                border: 2px solid #191970;
+                background-color: #42428a;
+                color: #fff;
+                font-weight: normal;
+                padding: 5px;
+            }
+            td {
+                border: 2px solid #c0c0d8;
+                background-color: #ededf2;
+                padding: 8px;
+            }
+            a {
+                text-decoration-line: none;
+            }
+            p {
+                font-size: 14px;
+                text-align: justify;
+            }
+            .reference {
+                font-style: italic;
+                font-size: 12px;
+                line-height: 1.5em;
+                margin-top: 15px;
+            }
+            body {
+                margin: 2rem;
+                background: #f1f1f1;
+                color: #000;
+                font: 100%/1.4 Sans-Serif;
+            }
+            .tab-content {
+                margin: 2rem;
+            }
+            button:focus {
+                outline: 0;
+            }
+            .tab-button-group {
+                padding-left: 2rem;
+                margin: 0;
+                border-bottom: 1px solid lightgray;
+            }
+            .tab-button {
+                border: 0;
+                border-radius: 3px;
+                margin-left: 10px;
+                font-weight: 500;
+                font-size: 14px;
+                vertical-align: bottom;
+                color: grey;
+                padding: 10px;
+                min-width: 9rem;
+                background: #f1f1f1;
+            }
+            .tab-button.active {
+                border: 1px solid lightgray;
+                border-top: 3px solid;
+                border-bottom: 3px solid transparent;
+                position: relative;
+                bottom: -3px;
+            }
+            .tab-button.active:nth-child(1) {
+                color: #c6a0d5;
+                border-top-color: #9b59b6;
+            }
+            .tab-button.active:nth-child(2) {
+                color: #8bc4ea;
+                border-top-color: #3498db;
+            }
+            .tab-button.active:nth-child(3) {
+                color: #f0b37e;
+                border-top-color: #e67e22;
+            }
+            .tab-button.active:nth-child(4) {
+                color: #df7c72;
+                border-top-color: #c0392b;
+            }
+            /* Mobile device view */
+            @media only screen and (max-width: 850px),
+                (min-device-width: 768px) and (max-device-width: 1024px) {
+                table {
+                    display: block;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                }
+                .tab-button-group {
+                    padding-left: 0;
+                }
+                .tab-button {
+                    border-bottom: 0;
+                    overflow: hidden;
+                    position: relative;
+                    background: #f0f0f5;
+                    margin-left: 0;
+                    width: 100%;
+                }
+                .tab-button::after {
+                    position: absolute;
+                    right: 15px;
+                    z-index: 2;
+                    pointer-events: none;
+                }
+                .tab-button.active {
+                    position: relative;
+                    display: block;
+                    border: 0;
+                    top: 0;
+                }
+                .tab-item {
+                    display: inherit;
+                    display: contents;
+                    display: block;
+                }
+                .tab-content {
+                    margin: 0;
+                }
+                .tab-button.active {
+                    border: 0;
+                    z-index: 1;
+                    background: #191970;
+                }
+            }
+        </style>
+
+        <script>
+            function openTab(event, tabName) {
+                var i, x, tablinks;
+                x = document.getElementsByClassName("tab-item");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tab-button");
+                for (i = 0; i < x.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(
+                        " active",
+                        ""
+                    );
+                }
+                document.getElementById(tabName).style.display = "block";
+                event.currentTarget.className += " active";
+            }
+
+            $(function() {
+                $('[id$="-include"]').each(function(e) {
+                    $(this).load(
+                        "includes\\" +
+                            $(this)
+                                .attr("id")
+                                .replace("-include", "") +
+                            ".html"
+                    );
+                });
+            });
+        </script>
+
+        <div class="tabs">
+            <div class="tab-button-group">
+                <button
+                    class="tab-button active"
+                    onclick="openTab(event, 'tab1')"
+                >
+                    Cafeterias and Restaurants
+                </button>
+                <button class="tab-button" onclick="openTab(event, 'tab2')">
+                    Cafés
+                </button>
+                <button class="tab-button" onclick="openTab(event, 'tab3')">
+                    CVS and Marts
+                </button>
+                <button class="tab-button" onclick="openTab(event, 'tab4')">
+                    Student Support Programs
+                </button>
+            </div>
+
+            <div class="tab-content">
+                <div id="tab1" class="tab-item">
+                    <div class="table-body">
+                        <p>
+                            SNU has over 30 cafeterias and restaurants on Gwanak
+                            campus. There are a wide variety of options to
+                            choose from, ranging from traditional Korean cuisine
+                            to vegetarian buffets and Italian cuisine. Take a
+                            look at the list of dining options on campus to
+                            satisfy your appetite.
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Area</th>
+                                    <th rowspan="2">Cafeteria/Restaurant</th>
+                                    <th rowspan="2">Bldg.</th>
+                                    <th rowspan="2">Floor</th>
+                                    <th rowspan="2">Type</th>
+                                    <th colspan="2">
+                                        Operating Hours (during semester)
+                                    </th>
+                                    <th rowspan="2">Price (KRW)</th>
+                                </tr>
+                                <tr>
+                                    <th>Mon-Fri</th>
+                                    <th>Sat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">Campus Center</td>
+                                    <td rowspan="2">
+                                        Student Center Cafeteria<br />(02-880-5543)
+                                    </td>
+                                    <td rowspan="2">63</td>
+                                    <td>1</td>
+                                    <td>Food court<br />(3 types)</td>
+                                    <td>08:00-19:00</td>
+                                    <td>11:30-14:00<br />17:00-19:00</td>
+                                    <td rowspan="2">2500-5000</td>
+                                </tr>
+                                <tr>
+                                    <td>B1</td>
+                                    <td>Food court<br />(2 types)</td>
+                                    <td>11:00-13:30</td>
+                                    <td>Closed</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Gwanjeong Library</td>
+                                    <td>Hue Gimbap</td>
+                                    <td>62-1</td>
+                                    <td>1</td>
+                                    <td>Kiosk order<br />(Snacks)</td>
+                                    <td>09:00-20:00</td>
+                                    <td>09:00-20:00</td>
+                                    <td>3000-7000</td>
+                                </tr>
+                                <tr>
+                                    <td>Lotteria Restaurant</td>
+                                    <td>62-1</td>
+                                    <td>1</td>
+                                    <td>By order<br />(Hamburger)</td>
+                                    <td>08:00-22:00</td>
+                                    <td>08:00-22:00</td>
+                                    <td>3000-8000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">
+                                        Language Education Institute
+                                    </td>
+                                    <td>Ten Kai Pin<br />(02-975-2203)</td>
+                                    <td>137-2</td>
+                                    <td>1</td>
+                                    <td>Serving<br />(Japanese)</td>
+                                    <td>10:00-21:00</td>
+                                    <td>11:00-21:00</td>
+                                    <td>8000-11000</td>
+                                </tr>
+                                <tr>
+                                    <td>Pho Pho In<br />(02-878-5060)</td>
+                                    <td>137-2</td>
+                                    <td>1</td>
+                                    <td>Serving<br />(Vietnam)</td>
+                                    <td>10:00-21:00</td>
+                                    <td>11:00-21:00</td>
+                                    <td>8000-11000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">
+                                        College of Business Administration
+                                    </td>
+                                    <td>
+                                        Dongwon Cafeteria<br />(02-880-8697)
+                                    </td>
+                                    <td>113</td>
+                                    <td>2</td>
+                                    <td>Food court<br />(2 types)</td>
+                                    <td>11:00-14:00<br />17:00-19:00</td>
+                                    <td>11:30-13:30</td>
+                                    <td>3500-5000</td>
+                                </tr>
+                                <tr>
+                                    <td>Lounge O<br />(02-882-7005)</td>
+                                    <td>113</td>
+                                    <td>1</td>
+                                    <td>Kiosk order<br />(Italian)</td>
+                                    <td>11:00-21:00</td>
+                                    <td>11:00-21:00</td>
+                                    <td>5000-20000</td>
+                                </tr>
+                                <tr>
+                                    <td>Sodam Maru</td>
+                                    <td>113</td>
+                                    <td>3</td>
+                                    <td>Serving</td>
+                                    <td>11:00-15:00<br />17:00-21:00</td>
+                                    <td>Closed</td>
+                                    <td>8000-50000</td>
+                                </tr>
+                                <tr>
+                                    <td>College of Liberal Studies</td>
+                                    <td>
+                                        Welstory Cafeteria<br />(02-875-0240)
+                                    </td>
+                                    <td>220</td>
+                                    <td>B1</td>
+                                    <td>Food court<br />(2 types)</td>
+                                    <td>
+                                        08:00-17:00<br />11:00-14:00<br />17:00-19:00
+                                    </td>
+                                    <td>Closed</td>
+                                    <td>3500-5000</td>
+                                </tr>
+                                <tr>
+                                    <td>College of Music</td>
+                                    <td>
+                                        Areumdeuri Cafeteria<br />(02-876-1006)
+                                    </td>
+                                    <td>74</td>
+                                    <td>1</td>
+                                    <td>Food court<br />(2 types)</td>
+                                    <td>11:30-14:00<br />17:00-19:00</td>
+                                    <td>Closed</td>
+                                    <td>4000-6000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">
+                                        College of Social Sciences
+                                    </td>
+                                    <td rowspan="3">
+                                        Gamgol Cafeteria<br />(02-880-5544)
+                                    </td>
+                                    <td rowspan="3">101</td>
+                                    <td rowspan="3">1</td>
+                                    <td>Food court<br />(2 types)</td>
+                                    <td>11:00-14:00<br />17:00-18:30</td>
+                                    <td rowspan="3">Closed</td>
+                                    <td rowspan="2">4000-5000</td>
+                                </tr>
+                                <tr>
+                                    <td>Halal<br />(1 type)</td>
+                                    <td>11:50-14:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Vegetarian Buffet</td>
+                                    <td>11:30-13:30</td>
+                                    <td>7500</td>
+                                </tr>
+                                <tr>
+                                    <td>Blue Elephant Restaurant</td>
+                                    <td>16-1</td>
+                                    <td>1</td>
+                                    <td>By order<br />(Japanese)</td>
+                                    <td>10:00-20:30</td>
+                                    <td>10:00-20:30</td>
+                                    <td>5000-12000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">College of Humanities</td>
+                                    <td>
+                                        Jahayeon Cafeteria<br />(02-880-7889)
+                                    </td>
+                                    <td>109</td>
+                                    <td>2</td>
+                                    <td>Food court<br />(2 types)</td>
+                                    <td>11:00-14:00<br />17:00-19:00</td>
+                                    <td>Closed</td>
+                                    <td>3500-5000</td>
+                                </tr>
+                                <tr>
+                                    <td>Jahayeon Restaurant</td>
+                                    <td>109</td>
+                                    <td>3</td>
+                                    <td>Serving</td>
+                                    <td>11:30-19:00</td>
+                                    <td>Closed</td>
+                                    <td>8000-15000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">College of Education</td>
+                                    <td rowspan="2">
+                                        Cafeteria No. 4<br />(02-889-6946)
+                                    </td>
+                                    <td rowspan="2">76</td>
+                                    <td>1</td>
+                                    <td>Food court<br />(2 types)</td>
+                                    <td>11:00-14:00<br />17:00-18:30</td>
+                                    <td>Closed</td>
+                                    <td>4000-5000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Serving</td>
+                                    <td>11:00-14:30<br />16:30-20:00</td>
+                                    <td>11:30-14:00</td>
+                                    <td>7000-20000</td>
+                                </tr>
+                                <tr>
+                                    <td>College of Natural Sciences</td>
+                                    <td>
+                                        Shaban Restaurant<br />(02-871-6933)
+                                    </td>
+                                    <td>500</td>
+                                    <td>1</td>
+                                    <td>Serving</td>
+                                    <td>11:00-14:30<br />16:30-20:00</td>
+                                    <td>11:30-14:00</td>
+                                    <td>6000-30000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">
+                                        College of Agriculture and Life Sciences
+                                    </td>
+                                    <td rowspan="2">
+                                        Cafeteria No. 3<br />Observatory<br />(02-880-5545)
+                                    </td>
+                                    <td rowspan="2">75-1</td>
+                                    <td>4</td>
+                                    <td>Food court<br />(3 types)</td>
+                                    <td>11:30;13:30<br />17:00-19:00</td>
+                                    <td rowspan="2">Closed</td>
+                                    <td rowspan="2">3500-5000</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Food court<br />(2 types)</td>
+                                    <td>11:00-14:00</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">
+                                        Duremidam Restaurant<br />(02-880-9358)
+                                    </td>
+                                    <td rowspan="2">75-1</td>
+                                    <td rowspan="2">5</td>
+                                    <td>Self-serving<br />Buffet</td>
+                                    <td>11:00-14:30<br />17:00-19:00</td>
+                                    <td>11:00-14:30<br />17:00-19:00</td>
+                                    <td>5500-6000</td>
+                                </tr>
+                                <tr>
+                                    <td>Serving<br />(Korean)</td>
+                                    <td>11:00-20:30</td>
+                                    <td>11:00-20:30</td>
+                                    <td>8000-35000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">
+                                        College of Engineering (Lower)
+                                    </td>
+                                    <td>
+                                        Gong Gan Cafeteria<br />(02-889-8956)
+                                    </td>
+                                    <td>30-2</td>
+                                    <td>1</td>
+                                    <td>Food court<br />(Chinese food)</td>
+                                    <td>
+                                        11:00-19:00<br />(Breaktime:
+                                        14:30-15:30)
+                                    </td>
+                                    <td>09:00-14:30</td>
+                                    <td>3500-4300</td>
+                                </tr>
+                                <tr>
+                                    <td>BBQ Restaurant<br />(02-882-6693)</td>
+                                    <td>32-1</td>
+                                    <td>B1</td>
+                                    <td>By order<br />(Chicken)</td>
+                                    <td>09:00-22:00</td>
+                                    <td>09:00-21:00</td>
+                                    <td>10000-16000</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        BBQ Premium Restaurant<br />(02-878-6690)
+                                    </td>
+                                    <td>38</td>
+                                    <td>1</td>
+                                    <td>By order<br />(Chicken)</td>
+                                    <td>09:00-22:00</td>
+                                    <td>09:00-21:00</td>
+                                    <td>15000-30000</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Rak Ku Jeong Restaurant<br />(02-875-8840)
+                                    </td>
+                                    <td>38</td>
+                                    <td>B1</td>
+                                    <td>Serving<br />(Korean)</td>
+                                    <td>11:30-15:00<br />17:30-21:00</td>
+                                    <td>11:30-15:00<br />17:30-21:00</td>
+                                    <td>15000-30000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="9">
+                                        College of Engineering (Upper)
+                                    </td>
+                                    <td rowspan="2">
+                                        Engineering Cafeteria No. 1<br />(02-889-8955)
+                                    </td>
+                                    <td rowspan="2">301</td>
+                                    <td>1</td>
+                                    <td>Food court<br />(3 corners)</td>
+                                    <td>11:00-14:00<br />17:00-19:00</td>
+                                    <td>11:00-14:00</td>
+                                    <td>3500-5500</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Snack Bar</td>
+                                    <td>08:00-19:00</td>
+                                    <td>11:00-14:00</td>
+                                    <td>1500-3500</td>
+                                </tr>
+                                <tr>
+                                    <td>Quiznos<br />(02-871-1939)</td>
+                                    <td>301</td>
+                                    <td>B1</td>
+                                    <td>Sandwich</td>
+                                    <td>07:00-22:00</td>
+                                    <td>08:00-22:00</td>
+                                    <td>4000-8000</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Engineering Cafeteria No. 2<br />(02-880-1939)
+                                    </td>
+                                    <td>302</td>
+                                    <td>1</td>
+                                    <td>Food court<br />(2 types)</td>
+                                    <td>11:15-14:00<br />17:00-19:00</td>
+                                    <td></td>
+                                    <td>3500-5000</td>
+                                </tr>
+                                <tr>
+                                    <td>Gusia Food Market</td>
+                                    <td>300</td>
+                                    <td>B1</td>
+                                    <td>Food court<br />(4 corners)</td>
+                                    <td>09:30-20:00<br />09:30-18:00</td>
+                                    <td></td>
+                                    <td>1500-9900</td>
+                                </tr>
+                                <tr>
+                                    <td>9ounce Burger</td>
+                                    <td>300</td>
+                                    <td>2</td>
+                                    <td>Kiosk order<br />(Hamburgers)</td>
+                                    <td>
+                                        10:00-21:00<br />(Break time:
+                                        15:30-16:30)<br />
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">
+                                        Faculty Club Restaurant<br />(02-880-5241)
+                                    </td>
+                                    <td rowspan="2">65</td>
+                                    <td>1</td>
+                                    <td>Serving<br />(Korean)</td>
+                                    <td rowspan="2">09:00-21:00</td>
+                                    <td rowspan="2"></td>
+                                    <td rowspan="2">20000-30000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Serving<br />(Italian)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        La Cucina Restaurant<br />(02-880-1632)
+                                    </td>
+                                    <td>310</td>
+                                    <td>1</td>
+                                    <td>Serving<br />(Italian, Chinese)</td>
+                                    <td>11:30-15:00<br />17:30-21:00</td>
+                                    <td></td>
+                                    <td>13000-50000</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5">Gwanaksa Dormitory</td>
+                                    <td>Ourhome Restaurant</td>
+                                    <td>901</td>
+                                    <td>1</td>
+                                    <td>Food court<br />(3 types)</td>
+                                    <td>
+                                        07:30-09:30<br />11:30-13:30<br />17:30-19:30
+                                    </td>
+                                    <td>
+                                        07:30-09:30<br />11:30-13:30<br />17:30-19:30
+                                    </td>
+                                    <td>3500-4000</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Dormitory Cafeteria<br />(02-880-9072)
+                                    </td>
+                                    <td>919</td>
+                                    <td>1</td>
+                                    <td>Food court<br />(2 types)</td>
+                                    <td>
+                                        07:30-09:30<br />11:30-13:30<br />17:30-19:30
+                                    </td>
+                                    <td>
+                                        08:00-09:30<br />11:30-13:30<br />17:30-19:30
+                                    </td>
+                                    <td>3500-5000</td>
+                                </tr>
+                                <tr>
+                                    <td>Olive Green<br />(02-881-9207)</td>
+                                    <td>900</td>
+                                    <td>B2</td>
+                                    <td>By order<br />(Korean food)</td>
+                                    <td>08:30-22:30</td>
+                                    <td>08:30-22:30</td>
+                                    <td>3000~</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Chicken Bbox Restaurant<br />(02-880-9222)
+                                    </td>
+                                    <td>900</td>
+                                    <td>Br</td>
+                                    <td>By order<br />(Chicken)</td>
+                                    <td>
+                                        16:00-01:00<br />(Delivery: 18:00-24:00)
+                                    </td>
+                                    <td>
+                                        16:00-01:00<br />(Delivery: 18:00-24:00)
+                                    </td>
+                                    <td>12000-21000</td>
+                                </tr>
+                                <tr>
+                                    <td>10-inch Sandwich<br />(02-880-9211)</td>
+                                    <td>900</td>
+                                    <td>B2</td>
+                                    <td>
+                                        By order<br />(Sandwiches, Coffee,
+                                        Bakery)
+                                    </td>
+                                    <td>07:00-23:00</td>
+                                    <td>08:00-22:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Hoam Faculty House</td>
+                                    <td>Shangri La Restaurant</td>
+                                    <td>125</td>
+                                    <td>1</td>
+                                    <td>Serving</td>
+                                    <td>
+                                        07:00-09:30<br />11:30-14:00<br />17:30-21:00
+                                    </td>
+                                    <td>
+                                        07:30-09:30<br />11:30-14:00<br />17:30-20:00
+                                    </td>
+                                    <td rowspan="2">10000-30000</td>
+                                </tr>
+                                <tr>
+                                    <td>Renaissance Restaurant</td>
+                                    <td>125</td>
+                                    <td>2</td>
+                                    <td>Serving</td>
+                                    <td>11:30-14:00</td>
+                                    <td>Closed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="reference">
+                            Source: Diversity Report 2017
+                        </div>
+                    </div>
+                </div>
+                <div id="tab2" class="tab-item" style="display:none">
+                    <div class="table-body">
+                        <p>
+                            Whether you’re looking for a short break, a conducive study
+                            environment, or your daily dose of caffeine, we’ve got you covered.
+                            Satisfy your caffeine cravings with our list of cafés and bakeries
+                            available on Gwanak campus.
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Area</th>
+                                    <th rowspan="2">Café</th>
+                                    <th rowspan="2">Bldg.</th>
+                                    <th rowspan="2">Floor</th>
+                                    <th rowspan="2">Type</th>
+                                    <th colspan="3">Operating Hours (during semester)</th>
+                                </tr>
+                                <tr>
+                                    <th>Mon-Fri</th>
+                                    <th>Sat</th>
+                                    <th>Sun</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Language Education Institute</td>
+                                    <td>Neutinamu<br />(02-880-5552)</td>
+                                    <td>137-1</td>
+                                    <td>1</td>
+                                    <td>Coffee shop</td>
+                                    <td>08:00-19:00</td>
+                                    <td>09:30-16:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Museum of Art</td>
+                                    <td>MOA Café</td>
+                                    <td>151</td>
+                                    <td>1</td>
+                                    <td>Coffee shop</td>
+                                    <td>08:00-18:00</td>
+                                    <td>10:00-18:00</td>
+                                    <td>10:00-18:00</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">College of Social Sciences</td>
+                                    <td>Coffee&Tea</td>
+                                    <td>16-1</td>
+                                    <td>1</td>
+                                    <td>Coffee shop</td>
+                                    <td>08:00-21:00</td>
+                                    <td>10:00-18:00</td>
+                                    <td>10:00-18:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Da Hyang Man Dang<br />(02-880-6244)</td>
+                                    <td>67</td>
+                                    <td>1</td>
+                                    <td>Traditional tea house</td>
+                                    <td>11:00-19:00</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>College of Law</td>
+                                    <td>Eyagi<br />(02-887-2060)</td>
+                                    <td>72</td>
+                                    <td>1</td>
+                                    <td>Book café</td>
+                                    <td>08:00-20:00</td>
+                                    <td>10:00-18:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Campus Center</td>
+                                    <td>Flu-id</td>
+                                    <td>63</td>
+                                    <td>1</td>
+                                    <td>Coffee shop</td>
+                                    <td>08:00-19:30</td>
+                                    <td>09:00-14:30</td>
+                                    <td>09:00-14:30</td>
+                                </tr>
+                                <tr>
+                                    <td>Lounge Snack<br />(02-880-6787)</td>
+                                    <td>63</td>
+                                    <td>2</td>
+                                    <td>Snack bar</td>
+                                    <td>07:30-19:30</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Central Library</td>
+                                    <td>Neutinamu<br />(02-880-5546)</td>
+                                    <td>62</td>
+                                    <td>1</td>
+                                    <td>Coffee shop</td>
+                                    <td>08:00-19:30</td>
+                                    <td>11:30-19:00</td>
+                                    <td>11:30-19:00</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Kwanjeong Library</td>
+                                    <td>Paris Baguette<br />(02-875-8292)</td>
+                                    <td>62-1</td>
+                                    <td>1</td>
+                                    <td>Cofee shop and bakery</td>
+                                    <td>07:00-22:00</td>
+                                    <td>07:00-22:00</td>
+                                    <td>07:00-22:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Pascucci<br />(02-875-8497)</td>
+                                    <td>62-1</td>
+                                    <td>1,2</td>
+                                    <td>Coffee shop</td>
+                                    <td>07:00-22:00</td>
+                                    <td>07:00-22:00</td>
+                                    <td>07:00-22:00</td>
+                                </tr>
+                                <tr>
+                                    <td>College of Natural Sciences</td>
+                                    <td>A Twosome Place<br />(02-884-2385)</td>
+                                    <td>500</td>
+                                    <td>1</td>
+                                    <td>Coffee shop</td>
+                                    <td>08:00-22:00</td>
+                                    <td>08:00-22:00</td>
+                                    <td>08:00-22:00</td>
+                                </tr>
+                                <tr>
+                                    <td>College of Agriculture and Life Sciences</td>
+                                    <td>BeLePi<br />(02-882-4578)</td>
+                                    <td>200</td>
+                                    <td>1</td>
+                                    <td>Coffee shop and bakery</td>
+                                    <td>08:00-20:00</td>
+                                    <td>09:00-19:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>College of Engineering<br />(Lower)</td>
+                                    <td>The Lab 24/7</td>
+                                    <td>32-1</td>
+                                    <td>1</td>
+                                    <td>Coffee shop</td>
+                                    <td>08:00-21:00</td>
+                                    <td>09:00-18:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">College of Engineering<br />(Upper)</td>
+                                    <td>toogood</td>
+                                    <td>301</td>
+                                    <td>B1</td>
+                                    <td>Coffee shop and snack bar</td>
+                                    <td>08:00-19:00</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Café Dream</td>
+                                    <td>300</td>
+                                    <td>2</td>
+                                    <td>Coffee shop</td>
+                                    <td>08:00-21:00</td>
+                                    <td>09:00-17:00</td>
+                                    <td>09:00-17:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Shinyang Engineering Hall</td>
+                                    <td>The Mug</td>
+                                    <td>44-1</td>
+                                    <td>1</td>
+                                    <td>Internet café</td>
+                                    <td>08:00-19:40</td>
+                                    <td>09:00-16:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">College of Humanities</td>
+                                    <td>The Mug</td>
+                                    <td>4</td>
+                                    <td>1</td>
+                                    <td>Take out<br />(coffee and snacks)</td>
+                                    <td>08:00-19:40</td>
+                                    <td>09:00-16:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Neutinamu<br />(02-880-7888)</td>
+                                    <td>109</td>
+                                    <td>2</td>
+                                    <td>Take out<br />(coffee and snacks)</td>
+                                    <td>08:30-19:00</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">College of Education</td>
+                                    <td>The Lab 24/7<br />(02-878-8880)</td>
+                                    <td>12</td>
+                                    <td>B1</td>
+                                    <td>Coffee shop</td>
+                                    <td>08:00-21:00</td>
+                                    <td>09:00-18:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Café Duremidam</td>
+                                    <td>76</td>
+                                    <td>1</td>
+                                    <td>Coffee shop</td>
+                                    <td>08:30-19:30</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Pascucci<br />(02-882-8497)</td>
+                                    <td>111</td>
+                                    <td>1</td>
+                                    <td>Coffee shop</td>
+                                    <td>08:00-22:00</td>
+                                    <td>08:00-22:00</td>
+                                    <td>08:00-22:00</td>
+                                </tr>
+                                <tr>
+                                    <td>GSIS</td>
+                                    <td>Café Dream</td>
+                                    <td>140</td>
+                                    <td>2</td>
+                                    <td>Coffee shop</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>College of Business Administration</td>
+                                    <td>Neutinamu<br />(02-880-8694)</td>
+                                    <td>113</td>
+                                    <td>1</td>
+                                    <td>Take-out<br />(coffee and snacks)</td>
+                                    <td>08:30-19:00</td>
+                                    <td>09:00-16:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">College of Music</td>
+                                    <td>Neutinamu<br />(02-880-1613)</td>
+                                    <td>54</td>
+                                    <td>1</td>
+                                    <td>Book café</td>
+                                    <td>09:00-19:00</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Hollys Coffee<br />(02-877-7186)</td>
+                                    <td>74</td>
+                                    <td>1</td>
+                                    <td>Coffee shop</td>
+                                    <td>08:00-22:00</td>
+                                    <td>08:00-22:00</td>
+                                    <td>08:00-22:00</td>
+                                </tr>
+                                <tr>
+                                    <td>College of Liberal Studies</td>
+                                    <td>Welstory Café</td>
+                                    <td>220</td>
+                                    <td>B1</td>
+                                    <td>Coffee shop</td>
+                                    <td>10:00-18:00</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Gwanaksa Dormitory</td>
+                                    <td>Café Gran<br />(02-881-9204)</td>
+                                    <td>901</td>
+                                    <td>1</td>
+                                    <td>Coffee shop</td>
+                                    <td>07:30-21:00</td>
+                                    <td>07:30-21:00</td>
+                                    <td>07:30-21:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Research Park</td>
+                                    <td>De Chocolate Coffee<br />(02-889-7909)</td>
+                                    <td>940</td>
+                                    <td>1</td>
+                                    <td>Coffee shop</td>
+                                    <td>10:00-20:00</td>
+                                    <td>10:00-18:00</td>
+                                    <td>10:00-18:00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="reference">
+                            Last updated by: Team SISA (August 2019)
+                        </div>
+                    </div>
+                </div>
+                <div id="tab3" class="tab-item" style="display:none">
+                    <div class="table-body">
+                        <p>
+                            There are a number of convenience stores and marts scattered across
+                            Gwanak campus, perfect for a quick snack or convenient pick-me-up.
+                            Take a look at the table below for more detailed information.
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Area</th>
+                                    <th rowspan="2">Store</th>
+                                    <th rowspan="2">Bldg.</th>
+                                    <th rowspan="2">Floor</th>
+                                    <th rowspan="2">Type</th>
+                                    <th colspan="2">Operating Hours (during semester)</th>
+                                </tr>
+                                <tr>
+                                    <th>Mon-Fri</th>
+                                    <th>Sat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>POSCO Sports Center</td>
+                                    <td>ProShop</td>
+                                    <td>71-2</td>
+                                    <td>1</td>
+                                    <td>Sports clothing and equipment</td>
+                                    <td>07:30-21:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>College of Veterinary Medicine</td>
+                                    <td>Veterinary College Rest Snack Bar</td>
+                                    <td>85</td>
+                                    <td>3</td>
+                                    <td>Mart</td>
+                                    <td>09:00-18:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">College of Social Sciences</td>
+                                    <td>CU</td>
+                                    <td>16-1</td>
+                                    <td>1</td>
+                                    <td>Convenience Store<br />(24 hours)</td>
+                                    <td>08:00-24:00</td>
+                                    <td>00:00-24:00</td>
+                                </tr>
+                                <tr>
+                                    <td>SNUplex</td>
+                                    <td>101</td>
+                                    <td>1</td>
+                                    <td>Convenience store and gift shop</td>
+                                    <td>09:00-18:30</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Kwanjeong Library</td>
+                                    <td>CU</td>
+                                    <td>62-1</td>
+                                    <td>1</td>
+                                    <td>Convenience store</td>
+                                    <td>08:00-22:00</td>
+                                    <td>08:00-20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Central Library</td>
+                                    <td>SNUCO</td>
+                                    <td>62</td>
+                                    <td>3</td>
+                                    <td>Convenience store</td>
+                                    <td>08:00-22:00</td>
+                                    <td>08:00-20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Campus Center</td>
+                                    <td>SNUCO</td>
+                                    <td>63</td>
+                                    <td>1</td>
+                                    <td>Convenience store</td>
+                                    <td>08:00-20:00</td>
+                                    <td>08:00-19:00</td>
+                                </tr>
+                                <tr>
+                                    <td>College of Natural Sciences</td>
+                                    <td>SNUCO</td>
+                                    <td>500</td>
+                                    <td>1</td>
+                                    <td>Convenience store</td>
+                                    <td>08:30-19:30</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>College of Agriculture and Life Sciences</td>
+                                    <td>SNUCO</td>
+                                    <td>75-1</td>
+                                    <td>4</td>
+                                    <td>Convenience store</td>
+                                    <td>08:00-19:30</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">College of Engineering<br />(Lower)</td>
+                                    <td>CU</td>
+                                    <td>34</td>
+                                    <td>1</td>
+                                    <td>Self-checkout<br />convenience store (24 hours)</td>
+                                    <td>00:00-24:00</td>
+                                    <td>00:00-24:00</td>
+                                </tr>
+                                <tr>
+                                    <td>CU</td>
+                                    <td>32-1</td>
+                                    <td>B1</td>
+                                    <td>Convenience store</td>
+                                    <td>07:30-21:00</td>
+                                    <td>12:00-17:00</td>
+                                </tr>
+                                <tr>
+                                    <td>SNUCO</td>
+                                    <td>113</td>
+                                    <td>1</td>
+                                    <td>Convenience store and gift shop</td>
+                                    <td>08:00-19:30</td>
+                                    <td>09:00-17:00</td>
+                                </tr>
+                                <tr>
+                                    <td>College of Engineering<br />(upper)</td>
+                                    <td>CU</td>
+                                    <td>301</td>
+                                    <td>B1</td>
+                                    <td>Convenience store</td>
+                                    <td>08:00-22:00</td>
+                                    <td>09:00-18:00</td>
+                                </tr>
+                                <tr>
+                                    <td>College of Education</td>
+                                    <td>Hanaro Mart</td>
+                                    <td>76</td>
+                                    <td>2</td>
+                                    <td>Mart</td>
+                                    <td>09:00-18:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>College of Liberal Studies</td>
+                                    <td>SNUCO</td>
+                                    <td>220</td>
+                                    <td>B1</td>
+                                    <td>Convenience Store</td>
+                                    <td>09:00-19:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Gwanaksa Dormitory</td>
+                                    <td>GS25</td>
+                                    <td>900</td>
+                                    <td>B2</td>
+                                    <td>Convenience store<br />(24 hours)</td>
+                                    <td>00:00-24:00</td>
+                                    <td>00:00-24:00</td>
+                                </tr>
+                                <tr>
+                                    <td>SNUCO</td>
+                                    <td>919</td>
+                                    <td>1</td>
+                                    <td>Convenience store</td>
+                                    <td>08:00-01:30</td>
+                                    <td>08:00-01:30</td>
+                                </tr>
+                                <tr>
+                                    <td>Research Park</td>
+                                    <td>7-Eleven</td>
+                                    <td>940</td>
+                                    <td>B1</td>
+                                    <td>Convenience store<br />(24 hours)</td>
+                                    <td>00:00-24:00</td>
+                                    <td>00:00-24:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Family Dormitory</td>
+                                    <td>SNUCO</td>
+                                    <td>933</td>
+                                    <td>B1</td>
+                                    <td>Convenience store</td>
+                                    <td>09:00-22:00</td>
+                                    <td>09:00-21:00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="reference">Last updated by: Team SISA (August 2019)</div>
+                    </div>
+                </div>
+                <div id="tab4" class="tab-item" style="display:none">
+                    <div class="table-body">
+                        <p>
+                            Looking for ways to enhance your college experience? There are a
+                            wide range of student services offered in SNU to provide academic
+                            and social support for both domestic and international students.
+                            Some of the student support services available on campus include
+                            foreign-language counseling services, academic tutoring,
+                            international exchange programs, and student health check-ups.
+                            <br />
+                            <br />
+                            For more detailed information refer to:
+                            <a
+                                href="https://drive.google.com/drive/folders/1V1niRAmcEkgASaaF7QZZPg-lGfyeonmR"
+                                target="_blank"
+                                >Student Support Programs</a
+                            >
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th title="Field #1">Category/College</th>
+                                    <th title="Field #2">Institution/Program</th>
+                                    <th title="Field #3">Location</th>
+                                    <th title="Field #4">Contents</th>
+                                    <th title="Field #5">Contact info</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3">College of Humanities</td>
+                                    <td>Internationalization Center</td>
+                                    <td>Bldg. 8, 601</td>
+                                    <td>
+                                        Subsidies for language courses, English proofreading
+                                        service, Korean Language Program etc.
+                                    </td>
+                                    <td>02-880-8291 (chio@snu.ac.kr)</td>
+                                </tr>
+                                <tr>
+                                    <td>Education Support Office</td>
+                                    <td>Bldg. 8, 510</td>
+                                    <td>
+                                        Humanities Honors Program, dissertation writing support,
+                                        research support, etc.
+                                    </td>
+                                    <td>02-880-8291 (hedu@snu.ac.kr)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a
+                                            href="http://snucounsel.snu.ac.kr/en/main.do"
+                                            target="_blank"
+                                            >Center for Campus Life &amp; Culture</a
+                                        >
+                                    </td>
+                                    <td>Bldg. 63 Student Center 5F</td>
+                                    <td>
+                                        Mentoring Program, 24-hour counseling services,
+                                        psychoeducational workshops, student handbook, etc.
+                                    </td>
+                                    <td>02-880-5501 (counsel@snu.ac.kr)</td>
+                                </tr>
+                                <tr>
+                                    <td>College of Natural Sciences</td>
+                                    <td>Student Counseling Center</td>
+                                    <td>Bldg. 501, 328</td>
+                                    <td>
+                                        Individual/group counseling, personality tests/analysis
+                                    </td>
+                                    <td>02-880-4340 (cns.counsel@snu.ac.kr)</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">
+                                        College of Business Administration / Graduate School of
+                                        Business
+                                    </td>
+                                    <td>Global Community Services</td>
+                                    <td></td>
+                                    <td>Overseas volunteer activities</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Student Counseling Center (경청)</td>
+                                    <td>Bldg. 58, 210</td>
+                                    <td>
+                                        Individual/group counseling, personality tests/analysis
+                                    </td>
+                                    <td>02-880-6948 (biz-counsel@snu.ac.kr)</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">College of Engineering</td>
+                                    <td>
+                                        <a href="http://esc.snu.ac.kr" target="_blank"
+                                            >Student Counseling Center (공감)</a
+                                        >
+                                    </td>
+                                    <td>Bldg. 39, 227</td>
+                                    <td>
+                                        School/career counseling, individual/group counseling,
+                                        personality tests
+                                    </td>
+                                    <td>02-880-1716 (esc@snu.ac.kr)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="https://eng.snu.ac.kr/welcome" target="_blank"
+                                            >Welcome Center</a
+                                        >
+                                    </td>
+                                    <td>Bldg. 38, 202</td>
+                                    <td>
+                                        Operation of one-stop service platform for international
+                                        faculty and students, providing information on
+                                        administrative matters, university regulations,
+                                        scholarships, visas, living accomodations, insurance,
+                                        various events, etc.
+                                    </td>
+                                    <td>02-880-1172 (welcome@eng.snu.ac.kr)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        eSangSang (Department of Electrical and Computer
+                                        Engineering Student Center)
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        Academic/career counseling, psychological test and
+                                        counseling
+                                    </td>
+                                    <td>02-880-7305</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">
+                                        College of Agriculture &amp; Life Sciences
+                                    </td>
+                                    <td>Global Development Program</td>
+                                    <td></td>
+                                    <td>
+                                        CALS Global Challenger Program, overseas internships,
+                                        subsidies for international conference presentations
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Student Counseling Center (Nong;Dam)</td>
+                                    <td>Bldg. 75-1, 209</td>
+                                    <td>Short-term and mid/long-term counseling advice</td>
+                                    <td>02-880-5114 (calsweb@snu.ac.kr)</td>
+                                </tr>
+                                <tr>
+                                    <td>College of Law</td>
+                                    <td>Student Support Center</td>
+                                    <td>Bldg. 17</td>
+                                    <td>
+                                        Education Counseling program, mentoring program,
+                                        individual/group counseling, legal profession
+                                        information sessions and internships
+                                    </td>
+                                    <td>02-880-7532</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">College of Education</td>
+                                    <td>International Student Support Program</td>
+                                    <td></td>
+                                    <td>
+                                        Welcoming Party, field trips, forums, Language Exchange
+                                        Program etc.
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Language Exchange Program (LEP)</td>
+                                    <td></td>
+                                    <td>
+                                        Matching of pairs of internaitnal and Korean students,
+                                        provision of opportunity for one-hour weekly language
+                                        exchange sessions
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>College of Human Ecology</td>
+                                    <td>Undergraduate Mentoring Program</td>
+                                    <td></td>
+                                    <td>Mentoring from undergraduate students</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">College of Medicine</td>
+                                    <td>
+                                        Yeongeon Student Support Center, SNU Peer Tutoring,
+                                        Global Tutoring
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        Mental health counseling, tutoring program for 84
+                                        students, tutoring for international students
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Student Career Development Center</td>
+                                    <td></td>
+                                    <td>
+                                        Meeting with alumni, Career Search Program, mentoring
+                                        for international students
+                                    </td>
+                                    <td>02-740-8138</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Faculty of Liberal Education</td>
+                                    <td>Tutoring (1:1)</td>
+                                    <td></td>
+                                    <td>
+                                        Basic English and math courses for students from
+                                        low-incom families
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Writing Mentoring (1:1)</td>
+                                    <td></td>
+                                    <td>For students with low scores in writing courses</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5">Administrative Organizations</td>
+                                    <td>Office of Academic Affairs</td>
+                                    <td>Bldg. 60, 1F</td>
+                                    <td>
+                                        Manage academic records, courses, grades, course
+                                        registration, and summer/winter sessions, Issue academic
+                                        certificates and verify degrees, manage graduation and
+                                        diploma conference
+                                    </td>
+                                    <td>02-880-5008</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="http://oia.snu.ac.kr" target="_blank"
+                                            >Office of International Affairs (OIA)</a
+                                        >
+                                    </td>
+                                    <td>Bldg, 152</td>
+                                    <td>
+                                        Support for international students, cross-cultural
+                                        campus events, operatio of SNU Internatinal Summer
+                                        Institute (ISI)
+                                    </td>
+                                    <td>02-880-8638 (snuoia@snu.ac.kr)</td>
+                                </tr>
+                                <tr>
+                                    <td>Office of Student Affairs</td>
+                                    <td>Bldg. 60, 3F</td>
+                                    <td>
+                                        Support for international students (related to
+                                        scholarships, dormitories, campus tour program, S-Card
+                                        issuance, recommend students for university committees,
+                                        guide and support students’ associations and clubs,
+                                        etc.)
+                                    </td>
+                                    <td>02-880-5010</td>
+                                </tr>
+                                <tr>
+                                    <td>Office of Research Affairs</td>
+                                    <td>Bldg. 60, 5F</td>
+                                    <td>
+                                        Research support for international faculty, researchers,
+                                        etc.
+                                    </td>
+                                    <td>02-880-5016 (research@snu.ac.kr)</td>
+                                </tr>
+                                <tr>
+                                    <td>Office of Admissions</td>
+                                    <td>Bldg. 150, 4F</td>
+                                    <td>
+                                        Admission of international students through the
+                                        International Admissions processes, operation of
+                                        orientation program for International Admissions
+                                        students
+                                    </td>
+                                    <td>02-880-6977 (snuadmit@snu.ac.kr)</td>
+                                </tr>
+                                <tr>
+                                    <td>Advisory Body</td>
+                                    <td>
+                                        <a href="http://diversity.snu.ac.kr" target="_blank"
+                                            >SNU Diversity Council</a
+                                        >
+                                    </td>
+                                    <td>Bldg. 152-1, 513</td>
+                                    <td>
+                                        Conducting surveys and policy research for the
+                                        improvement of internationalization at SNU on topics
+                                        such as developing policies, conducting diversity ideas
+                                        contest, publication of the Diversity Report
+                                    </td>
+                                    <td>02-880-2015 (diversity@snu.ac.kr)</td>
+                                </tr>
+                                <tr>
+                                    <td>Educational Organizations</td>
+                                    <td>
+                                        <a href="http://edu.snu.ac.kr" target="_blank"
+                                            >International Seoul National University College of
+                                            Education (iSNUCE)</a
+                                        >
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        Programs to help international students adjust to life
+                                        in Korea (New student orientation, field trips, round
+                                        table discussions, various other events)
+                                    </td>
+                                    <td>02-880-7600</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="6">Affiliated Organizations</td>
+                                    <td>
+                                        <a href="http://hrc.snu.ac.kr" target="_blank"
+                                            >SNU Human Rights Center</a
+                                        >
+                                    </td>
+                                    <td>Bldg. 153, 3F</td>
+                                    <td>
+                                        English language online version of Human Rights, gender
+                                        equality education and English-language counseling for
+                                        sexual harassment and sexual violence, support for human
+                                        rights related research (in Korean and English),
+                                        minority human rights surveys of international students
+                                        etc.
+                                    </td>
+                                    <td>02-880-2421</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="http://lei.snu.ac.kr" target="_blank"
+                                            >Language Education Institute (LEI)</a
+                                        >
+                                    </td>
+                                    <td>Bldg. 137</td>
+                                    <td>Korean and foreign language class programs</td>
+                                    <td>02-880-8570 (klp@snu.ac.kr)</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="http://ctl.snu.ac.kr" target="_blank"
+                                            >Center for Teaching and Learning (CTL)</a
+                                        >
+                                    </td>
+                                    <td>Bldg. 61</td>
+                                    <td>
+                                        Writing tutoring programs for internaitonal students,
+                                        proofreading and other assistance with writing Korean
+                                        language theses
+                                    </td>
+                                    <td>02-880-5428</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="http://career.snu.ac.kr" target="_blank"
+                                            >Career Development Center</a
+                                        >
+                                    </td>
+                                    <td>Bldg. 152-1</td>
+                                    <td>
+                                        Global Talent Programs, overseas intenrship program, job
+                                        fairs for international students
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="https://dorm.snu.ac.kr/eng/" target="_blank"
+                                            >Gwanak Residence Halls Gwansim Counseling Center</a
+                                        >
+                                    </td>
+                                    <td>Bldg. 919A 1F</td>
+                                    <td>Psychological/career counseling</td>
+                                    <td>02-880-7979</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a
+                                            href="http://health4u.snu.ac.kr/en/index.do"
+                                            target="_blank"
+                                            >Health Service Center</a
+                                        >
+                                    </td>
+                                    <td>Bldg. 63, 3F</td>
+                                    <td>
+                                        Student health checkup, health promotion, vaccination,
+                                        English language service available during appointments
+                                        with international students
+                                    </td>
+                                    <td>02-880-5338</td>
+                                </tr>
+                                <tr>
+                                    <td>Others</td>
+                                    <td>Police Desk (Seoul Gwanak Police Station)</td>
+                                    <td>Bldg. 137, 414</td>
+                                    <td>
+                                        Counseling in English, Chinese or Korean and support at
+                                        Gwanak Police Station&#39;s Foreign Affairs Division for
+                                        international students victims of crime
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="reference">
+                            Source: Diversity Report 2017
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

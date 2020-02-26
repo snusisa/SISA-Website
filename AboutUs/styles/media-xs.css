@@ -1,0 +1,50 @@
+@media (max-width: 767px) {
+    .x .c1-l {
+        padding-top: 40px;
+    }
+    .x .c1-m {
+        padding-bottom: 40px;
+    }
+    .x .c1-2k {
+        width: 100%;
+    }
+    .x .c1-2t {
+        max-width: 224px;
+    }
+    .x .c1-2u {
+        display: block;
+    }
+    .x .c1-2v {
+        max-height: 80px;
+    }
+    .x .c1-2w {
+        margin-top: 0;
+    }
+    .x .c1-2x {
+        margin-right: auto;
+    }
+    .x .c1-2y {
+        margin-bottom: 0;
+    }
+    .x .c1-2z {
+        margin-left: auto;
+    }
+    .x .c1-6z > :nth-child(n) {
+        margin-bottom: 24px;
+    }
+    .x .c1-70 > :last-child {
+        margin-bottom: 0 !important;
+    }
+    .x .c1-8l {
+        width: 32px;
+    }
+    .x .c1-8m {
+        height: 32px;
+    }
+    .x .c1-8s {
+        display: flex;
+    }
+    .x .c1-8t {
+        flex-direction: column;
+    }
+}

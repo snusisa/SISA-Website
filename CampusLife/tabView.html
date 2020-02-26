@@ -1,0 +1,108 @@
+<!-- Campus Life Tab view containing all compiled table components -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=<device-width>, initial-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    </head>
+    <body>
+        <!-- Reference to external css file -->
+        <link rel="stylesheet" type="text/css" href="tabView.css" />
+
+        <!-- Javascript for tab navigation functionality -->
+        <script>
+            function openTab(event, tabName) {
+                var i, x, tablinks;
+                x = document.getElementsByClassName("tab-item");
+                for (i = 0; i < x.length; i++) {
+                    // hide content display for non-active tab items
+                    x[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tab-button");
+                for (i = 0; i < x.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(
+                        // styling for non-active tabs
+                        " active",
+                        ""
+                    );
+                }
+                // display content of currently active tab
+                document.getElementById(tabName).style.display = "block";
+                // change styling for currently active tab
+                event.currentTarget.className += " active";
+            }
+
+            $(function() {
+                $('[id$="-include"]').each(function(e) {
+                    $(this).load(
+                        "includes\\" +
+                            $(this)
+                                .attr("id")
+                                .replace("-include", "") +
+                            ".html"
+                    );
+                });
+            });
+        </script>
+
+        <!-- Navigation Tab View -->
+        <div class="tabs">
+            <!-- Tab Navigation Bar -->
+            <div class="tab-button-group">
+                <button
+                    class="tab-button active"
+                    onclick="openTab(event, 'tab1')"
+                >
+                    <!-- default tab -->
+                    Cafeterias and Restaurants
+                </button>
+                <button class="tab-button" onclick="openTab(event, 'tab2')">
+                    Cafés
+                </button>
+                <button class="tab-button" onclick="openTab(event, 'tab3')">
+                    CVS and Marts
+                </button>
+                <button class="tab-button" onclick="openTab(event, 'tab4')">
+                    Student Support Programs
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <div id="tab1" class="tab-item">
+                    <!-- Default tab -->
+                    <object
+                        data="cafeterias.html"
+                        type="text/html"
+                        style="width:100%; height:300vh;"
+                    ></object>
+                </div>
+                <div id="tab2" class="tab-item" style="display:none">
+                    <object
+                        data="cafes.html"
+                        type="text/html"
+                        style="width:100%; height:180vh;"
+                    ></object>
+                </div>
+                <div id="tab3" class="tab-item" style="display:none">
+                    <object
+                        data="cvsMarts.html"
+                        type="text/html"
+                        style="width:100%; height:120vh;"
+                    ></object>
+                </div>
+                <div id="tab4" class="tab-item" style="display:none">
+                    <object
+                        data="studentSupportPrograms.html"
+                        type="text/html"
+                        style="width:100%; height:200vh;"
+                    ></object>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
