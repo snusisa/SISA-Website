@@ -10,7 +10,7 @@ This folder contains all the source code for the About Us page in the official S
 
 > _File to be inserted in website's Campus Life custom HTML code section_
 
-Contains all external references to all individual tab components, css and javascript files. Javascript for the tab functions is located in `tab.js`
+Contains all external references to all individual tab components, css and javascript files.
 
 ### **ExecutiveCommittee**
 

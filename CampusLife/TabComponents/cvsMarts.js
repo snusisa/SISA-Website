@@ -5,7 +5,7 @@ document.write(`<!DOCTYPE html>
     </head>
     <div class="table-body">
         <!-- Reference to external css file -->
-        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="./style.css" />
         <p>
             There are a number of convenience stores and marts scattered across
             Gwanak campus, perfect for a quick snack or convenient pick-me-up.

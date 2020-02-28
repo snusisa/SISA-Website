@@ -5,7 +5,7 @@ document.write(`<!DOCTYPE html>
     </head>
     <div class="table-body">
         <!-- Reference to external css file -->
-        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="./style.css" />
         <p>
             Whether you’re looking for a short break, a conducive study
             environment, or your daily dose of caffeine, we’ve got you covered.
