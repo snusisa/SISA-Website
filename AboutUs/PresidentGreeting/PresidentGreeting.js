@@ -120,16 +120,16 @@ document.write(`
         <!-- Stylesheet References -->
         <link 
             rel="stylesheet" 
-            href="https://cdn.statically.io/gh/snusisa/SISA-Website/22eac485/AboutUs/PresidentGreeting/PresidentGreeting.css" 
+            href="./PresidentGreeting.css" 
             />
         <link
             rel="stylesheet"
-            href="https://cdn.statically.io/gh/snusisa/SISA-Website/22eac485/AboutUs/styles/font.css"
+            href="../styles/font.css"
         />
         <link
             data-glamor="cxs-xs-sheet"
             rel="stylesheet"
-            href="https://cdn.statically.io/gh/snusisa/SISA-Website/22eac485/AboutUs/styles/media-xs.css"
+            href="../styles/media-xs.css"
         />
         <link
             rel="stylesheet"

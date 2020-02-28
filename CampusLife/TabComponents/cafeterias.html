@@ -1,0 +1,436 @@
+<!-- HTML used for preview or easier debugging purposes only.
+    Convert to js using document.write(` `) 
+    to reference scripts externally.
+    To make changes to the tabView, edit cafeterias.js -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cafeterias and Restaurants</title>
+    </head>
+    <div class="table-body">
+        <!-- Reference to external css file -->
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <p>
+            SNU has over 30 cafeterias and restaurants on Gwanak campus. There
+            are a wide variety of options to choose from, ranging from
+            traditional Korean cuisine to vegetarian buffets and Italian
+            cuisine. Take a look at the list of dining options on campus to
+            satisfy your appetite.
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">Area</th>
+                    <th rowspan="2">Cafeteria/Restaurant</th>
+                    <th rowspan="2">Bldg.</th>
+                    <th rowspan="2">Floor</th>
+                    <th rowspan="2">Type</th>
+                    <th colspan="2">Operating Hours (during semester)</th>
+                    <th rowspan="2">Price (KRW)</th>
+                </tr>
+                <tr>
+                    <th>Mon-Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2">Campus Center</td>
+                    <td rowspan="2">
+                        Student Center Cafeteria<br />(02-880-5543)
+                    </td>
+                    <td rowspan="2">63</td>
+                    <td>1</td>
+                    <td>Food court<br />(3 types)</td>
+                    <td>08:00-19:00</td>
+                    <td>11:30-14:00<br />17:00-19:00</td>
+                    <td rowspan="2">2500-5000</td>
+                </tr>
+                <tr>
+                    <td>B1</td>
+                    <td>Food court<br />(2 types)</td>
+                    <td>11:00-13:30</td>
+                    <td>Closed</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Gwanjeong Library</td>
+                    <td>Hue Gimbap</td>
+                    <td>62-1</td>
+                    <td>1</td>
+                    <td>Kiosk order<br />(Snacks)</td>
+                    <td>09:00-20:00</td>
+                    <td>09:00-20:00</td>
+                    <td>3000-7000</td>
+                </tr>
+                <tr>
+                    <td>Lotteria Restaurant</td>
+                    <td>62-1</td>
+                    <td>1</td>
+                    <td>By order<br />(Hamburger)</td>
+                    <td>08:00-22:00</td>
+                    <td>08:00-22:00</td>
+                    <td>3000-8000</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Language Education Institute</td>
+                    <td>Ten Kai Pin<br />(02-975-2203)</td>
+                    <td>137-2</td>
+                    <td>1</td>
+                    <td>Serving<br />(Japanese)</td>
+                    <td>10:00-21:00</td>
+                    <td>11:00-21:00</td>
+                    <td>8000-11000</td>
+                </tr>
+                <tr>
+                    <td>Pho Pho In<br />(02-878-5060)</td>
+                    <td>137-2</td>
+                    <td>1</td>
+                    <td>Serving<br />(Vietnam)</td>
+                    <td>10:00-21:00</td>
+                    <td>11:00-21:00</td>
+                    <td>8000-11000</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">College of Business Administration</td>
+                    <td>Dongwon Cafeteria<br />(02-880-8697)</td>
+                    <td>113</td>
+                    <td>2</td>
+                    <td>Food court<br />(2 types)</td>
+                    <td>11:00-14:00<br />17:00-19:00</td>
+                    <td>11:30-13:30</td>
+                    <td>3500-5000</td>
+                </tr>
+                <tr>
+                    <td>Lounge O<br />(02-882-7005)</td>
+                    <td>113</td>
+                    <td>1</td>
+                    <td>Kiosk order<br />(Italian)</td>
+                    <td>11:00-21:00</td>
+                    <td>11:00-21:00</td>
+                    <td>5000-20000</td>
+                </tr>
+                <tr>
+                    <td>Sodam Maru</td>
+                    <td>113</td>
+                    <td>3</td>
+                    <td>Serving</td>
+                    <td>11:00-15:00<br />17:00-21:00</td>
+                    <td>Closed</td>
+                    <td>8000-50000</td>
+                </tr>
+                <tr>
+                    <td>College of Liberal Studies</td>
+                    <td>Welstory Cafeteria<br />(02-875-0240)</td>
+                    <td>220</td>
+                    <td>B1</td>
+                    <td>Food court<br />(2 types)</td>
+                    <td>08:00-17:00<br />11:00-14:00<br />17:00-19:00</td>
+                    <td>Closed</td>
+                    <td>3500-5000</td>
+                </tr>
+                <tr>
+                    <td>College of Music</td>
+                    <td>Areumdeuri Cafeteria<br />(02-876-1006)</td>
+                    <td>74</td>
+                    <td>1</td>
+                    <td>Food court<br />(2 types)</td>
+                    <td>11:30-14:00<br />17:00-19:00</td>
+                    <td>Closed</td>
+                    <td>4000-6000</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">College of Social Sciences</td>
+                    <td rowspan="3">Gamgol Cafeteria<br />(02-880-5544)</td>
+                    <td rowspan="3">101</td>
+                    <td rowspan="3">1</td>
+                    <td>Food court<br />(2 types)</td>
+                    <td>11:00-14:00<br />17:00-18:30</td>
+                    <td rowspan="3">Closed</td>
+                    <td rowspan="2">4000-5000</td>
+                </tr>
+                <tr>
+                    <td>Halal<br />(1 type)</td>
+                    <td>11:50-14:00</td>
+                </tr>
+                <tr>
+                    <td>Vegetarian Buffet</td>
+                    <td>11:30-13:30</td>
+                    <td>7500</td>
+                </tr>
+                <tr>
+                    <td>Blue Elephant Restaurant</td>
+                    <td>16-1</td>
+                    <td>1</td>
+                    <td>By order<br />(Japanese)</td>
+                    <td>10:00-20:30</td>
+                    <td>10:00-20:30</td>
+                    <td>5000-12000</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">College of Humanities</td>
+                    <td>Jahayeon Cafeteria<br />(02-880-7889)</td>
+                    <td>109</td>
+                    <td>2</td>
+                    <td>Food court<br />(2 types)</td>
+                    <td>11:00-14:00<br />17:00-19:00</td>
+                    <td>Closed</td>
+                    <td>3500-5000</td>
+                </tr>
+                <tr>
+                    <td>Jahayeon Restaurant</td>
+                    <td>109</td>
+                    <td>3</td>
+                    <td>Serving</td>
+                    <td>11:30-19:00</td>
+                    <td>Closed</td>
+                    <td>8000-15000</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">College of Education</td>
+                    <td rowspan="2">Cafeteria No. 4<br />(02-889-6946)</td>
+                    <td rowspan="2">76</td>
+                    <td>1</td>
+                    <td>Food court<br />(2 types)</td>
+                    <td>11:00-14:00<br />17:00-18:30</td>
+                    <td>Closed</td>
+                    <td>4000-5000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Serving</td>
+                    <td>11:00-14:30<br />16:30-20:00</td>
+                    <td>11:30-14:00</td>
+                    <td>7000-20000</td>
+                </tr>
+                <tr>
+                    <td>College of Natural Sciences</td>
+                    <td>Shaban Restaurant<br />(02-871-6933)</td>
+                    <td>500</td>
+                    <td>1</td>
+                    <td>Serving</td>
+                    <td>11:00-14:30<br />16:30-20:00</td>
+                    <td>11:30-14:00</td>
+                    <td>6000-30000</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">
+                        College of Agriculture and Life Sciences
+                    </td>
+                    <td rowspan="2">
+                        Cafeteria No. 3<br />Observatory<br />(02-880-5545)
+                    </td>
+                    <td rowspan="2">75-1</td>
+                    <td>4</td>
+                    <td>Food court<br />(3 types)</td>
+                    <td>11:30;13:30<br />17:00-19:00</td>
+                    <td rowspan="2">Closed</td>
+                    <td rowspan="2">3500-5000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Food court<br />(2 types)</td>
+                    <td>11:00-14:00</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Duremidam Restaurant<br />(02-880-9358)</td>
+                    <td rowspan="2">75-1</td>
+                    <td rowspan="2">5</td>
+                    <td>Self-serving<br />Buffet</td>
+                    <td>11:00-14:30<br />17:00-19:00</td>
+                    <td>11:00-14:30<br />17:00-19:00</td>
+                    <td>5500-6000</td>
+                </tr>
+                <tr>
+                    <td>Serving<br />(Korean)</td>
+                    <td>11:00-20:30</td>
+                    <td>11:00-20:30</td>
+                    <td>8000-35000</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">College of Engineering (Lower)</td>
+                    <td>Gong Gan Cafeteria<br />(02-889-8956)</td>
+                    <td>30-2</td>
+                    <td>1</td>
+                    <td>Food court<br />(Chinese food)</td>
+                    <td>11:00-19:00<br />(Breaktime: 14:30-15:30)</td>
+                    <td>09:00-14:30</td>
+                    <td>3500-4300</td>
+                </tr>
+                <tr>
+                    <td>BBQ Restaurant<br />(02-882-6693)</td>
+                    <td>32-1</td>
+                    <td>B1</td>
+                    <td>By order<br />(Chicken)</td>
+                    <td>09:00-22:00</td>
+                    <td>09:00-21:00</td>
+                    <td>10000-16000</td>
+                </tr>
+                <tr>
+                    <td>BBQ Premium Restaurant<br />(02-878-6690)</td>
+                    <td>38</td>
+                    <td>1</td>
+                    <td>By order<br />(Chicken)</td>
+                    <td>09:00-22:00</td>
+                    <td>09:00-21:00</td>
+                    <td>15000-30000</td>
+                </tr>
+                <tr>
+                    <td>Rak Ku Jeong Restaurant<br />(02-875-8840)</td>
+                    <td>38</td>
+                    <td>B1</td>
+                    <td>Serving<br />(Korean)</td>
+                    <td>11:30-15:00<br />17:30-21:00</td>
+                    <td>11:30-15:00<br />17:30-21:00</td>
+                    <td>15000-30000</td>
+                </tr>
+                <tr>
+                    <td rowspan="9">College of Engineering (Upper)</td>
+                    <td rowspan="2">
+                        Engineering Cafeteria No. 1<br />(02-889-8955)
+                    </td>
+                    <td rowspan="2">301</td>
+                    <td>1</td>
+                    <td>Food court<br />(3 corners)</td>
+                    <td>11:00-14:00<br />17:00-19:00</td>
+                    <td>11:00-14:00</td>
+                    <td>3500-5500</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Snack Bar</td>
+                    <td>08:00-19:00</td>
+                    <td>11:00-14:00</td>
+                    <td>1500-3500</td>
+                </tr>
+                <tr>
+                    <td>Quiznos<br />(02-871-1939)</td>
+                    <td>301</td>
+                    <td>B1</td>
+                    <td>Sandwich</td>
+                    <td>07:00-22:00</td>
+                    <td>08:00-22:00</td>
+                    <td>4000-8000</td>
+                </tr>
+                <tr>
+                    <td>Engineering Cafeteria No. 2<br />(02-880-1939)</td>
+                    <td>302</td>
+                    <td>1</td>
+                    <td>Food court<br />(2 types)</td>
+                    <td>11:15-14:00<br />17:00-19:00</td>
+                    <td></td>
+                    <td>3500-5000</td>
+                </tr>
+                <tr>
+                    <td>Gusia Food Market</td>
+                    <td>300</td>
+                    <td>B1</td>
+                    <td>Food court<br />(4 corners)</td>
+                    <td>09:30-20:00<br />09:30-18:00</td>
+                    <td></td>
+                    <td>1500-9900</td>
+                </tr>
+                <tr>
+                    <td>9ounce Burger</td>
+                    <td>300</td>
+                    <td>2</td>
+                    <td>Kiosk order<br />(Hamburgers)</td>
+                    <td>10:00-21:00<br />(Break time: 15:30-16:30)<br /></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        Faculty Club Restaurant<br />(02-880-5241)
+                    </td>
+                    <td rowspan="2">65</td>
+                    <td>1</td>
+                    <td>Serving<br />(Korean)</td>
+                    <td rowspan="2">09:00-21:00</td>
+                    <td rowspan="2"></td>
+                    <td rowspan="2">20000-30000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Serving<br />(Italian)</td>
+                </tr>
+                <tr>
+                    <td>La Cucina Restaurant<br />(02-880-1632)</td>
+                    <td>310</td>
+                    <td>1</td>
+                    <td>Serving<br />(Italian, Chinese)</td>
+                    <td>11:30-15:00<br />17:30-21:00</td>
+                    <td></td>
+                    <td>13000-50000</td>
+                </tr>
+                <tr>
+                    <td rowspan="5">Gwanaksa Dormitory</td>
+                    <td>Ourhome Restaurant</td>
+                    <td>901</td>
+                    <td>1</td>
+                    <td>Food court<br />(3 types)</td>
+                    <td>07:30-09:30<br />11:30-13:30<br />17:30-19:30</td>
+                    <td>07:30-09:30<br />11:30-13:30<br />17:30-19:30</td>
+                    <td>3500-4000</td>
+                </tr>
+                <tr>
+                    <td>Dormitory Cafeteria<br />(02-880-9072)</td>
+                    <td>919</td>
+                    <td>1</td>
+                    <td>Food court<br />(2 types)</td>
+                    <td>07:30-09:30<br />11:30-13:30<br />17:30-19:30</td>
+                    <td>08:00-09:30<br />11:30-13:30<br />17:30-19:30</td>
+                    <td>3500-5000</td>
+                </tr>
+                <tr>
+                    <td>Olive Green<br />(02-881-9207)</td>
+                    <td>900</td>
+                    <td>B2</td>
+                    <td>By order<br />(Korean food)</td>
+                    <td>08:30-22:30</td>
+                    <td>08:30-22:30</td>
+                    <td>3000~</td>
+                </tr>
+                <tr>
+                    <td>Chicken Bbox Restaurant<br />(02-880-9222)</td>
+                    <td>900</td>
+                    <td>Br</td>
+                    <td>By order<br />(Chicken)</td>
+                    <td>16:00-01:00<br />(Delivery: 18:00-24:00)</td>
+                    <td>16:00-01:00<br />(Delivery: 18:00-24:00)</td>
+                    <td>12000-21000</td>
+                </tr>
+                <tr>
+                    <td>10-inch Sandwich<br />(02-880-9211)</td>
+                    <td>900</td>
+                    <td>B2</td>
+                    <td>By order<br />(Sandwiches, Coffee, Bakery)</td>
+                    <td>07:00-23:00</td>
+                    <td>08:00-22:00</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Hoam Faculty House</td>
+                    <td>Shangri La Restaurant</td>
+                    <td>125</td>
+                    <td>1</td>
+                    <td>Serving</td>
+                    <td>07:00-09:30<br />11:30-14:00<br />17:30-21:00</td>
+                    <td>07:30-09:30<br />11:30-14:00<br />17:30-20:00</td>
+                    <td rowspan="2">10000-30000</td>
+                </tr>
+                <tr>
+                    <td>Renaissance Restaurant</td>
+                    <td>125</td>
+                    <td>2</td>
+                    <td>Serving</td>
+                    <td>11:30-14:00</td>
+                    <td>Closed</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="reference">
+            Source: Diversity Report 2017
+        </div>
+    </div>
+</html>

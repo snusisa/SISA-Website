@@ -11,43 +11,18 @@
     </head>
     <body>
         <!-- Reference to external css file -->
-        <link rel="stylesheet" type="text/css" href="tabView.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.statically.io/gh/snusisa/SISA-Website/master/CampusLife/tabView.css"
+        />
 
-        <!-- Javascript for tab navigation functionality -->
-        <script>
-            function openTab(event, tabName) {
-                var i, x, tablinks;
-                x = document.getElementsByClassName("tab-item");
-                for (i = 0; i < x.length; i++) {
-                    // hide content display for non-active tab items
-                    x[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tab-button");
-                for (i = 0; i < x.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(
-                        // styling for non-active tabs
-                        " active",
-                        ""
-                    );
-                }
-                // display content of currently active tab
-                document.getElementById(tabName).style.display = "block";
-                // change styling for currently active tab
-                event.currentTarget.className += " active";
-            }
-
-            $(function() {
-                $('[id$="-include"]').each(function(e) {
-                    $(this).load(
-                        "includes\\" +
-                            $(this)
-                                .attr("id")
-                                .replace("-include", "") +
-                            ".html"
-                    );
-                });
-            });
-        </script>
+        <!-- Reference to externalJavascript for tab navigation functionality -->
+        <script
+            type="text/javascript"
+            src="https://cdn.statically.io/gh/snusisa/SISA-Website/master/tab.js"
+            crossorigin
+        ></script>
 
         <!-- Navigation Tab View -->
         <div class="tabs">
@@ -57,7 +32,7 @@
                     class="tab-button active"
                     onclick="openTab(event, 'tab1')"
                 >
-                    <!-- default tab -->
+                    <!-- Default tab -->
                     Cafeterias and Restaurants
                 </button>
                 <button class="tab-button" onclick="openTab(event, 'tab2')">
@@ -69,39 +44,25 @@
                 <button class="tab-button" onclick="openTab(event, 'tab4')">
                     Student Support Programs
                 </button>
+                <!-- Add new tabs here using the above format -->
             </div>
 
             <!-- Tab Content -->
             <div class="tab-content">
                 <div id="tab1" class="tab-item">
                     <!-- Default tab -->
-                    <object
-                        data="cafeterias.html"
-                        type="text/html"
-                        style="width:100%; height:300vh;"
-                    ></object>
+                    <script src="https://cdn.statically.io/gh/snusisa/SISA-Website/master/CampusLife/TabComponents/cafeterias.js"></script>
                 </div>
                 <div id="tab2" class="tab-item" style="display:none">
-                    <object
-                        data="cafes.html"
-                        type="text/html"
-                        style="width:100%; height:180vh;"
-                    ></object>
+                    <script src="https://cdn.statically.io/gh/snusisa/SISA-Website/master/CampusLife/TabComponents/cafes.js"></script>
                 </div>
                 <div id="tab3" class="tab-item" style="display:none">
-                    <object
-                        data="cvsMarts.html"
-                        type="text/html"
-                        style="width:100%; height:120vh;"
-                    ></object>
+                    <script src="https://cdn.statically.io/gh/snusisa/SISA-Website/master/CampusLife/TabComponents/cvsMarts.js"></script>
                 </div>
                 <div id="tab4" class="tab-item" style="display:none">
-                    <object
-                        data="studentSupportPrograms.html"
-                        type="text/html"
-                        style="width:100%; height:200vh;"
-                    ></object>
+                    <script src="https://cdn.statically.io/gh/snusisa/SISA-Website/master/CampusLife/TabComponents/studentSupportPrograms.js"></script>
                 </div>
+                <!-- Add new tabs content here by referencing external js -->
             </div>
         </div>
     </body>

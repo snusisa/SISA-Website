@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+document.write(`<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Cafeterias and Restaurants</title>
@@ -430,3 +430,4 @@
         </div>
     </div>
 </html>
+`);

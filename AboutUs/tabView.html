@@ -13,43 +13,14 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="https://cdn.statically.io/gh/snusisa/SISA-Website/22eac485/AboutUs/tabView.css"
+            href="https://cdn.statically.io/gh/snusisa/SISA-Website/master/AboutUs/tabView.css"
         />
-        <!-- Javascript for tab navigation functionality -->
-        <script>
-            function openTab(event, tabName) {
-                var i, x, tablinks;
-                x = document.getElementsByClassName("tab-item");
-                for (i = 0; i < x.length; i++) {
-                    // hide content display for non-active tab items
-                    x[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tab-button");
-                for (i = 0; i < x.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(
-                        // styling for non-active tabs
-                        " active",
-                        ""
-                    );
-                }
-                // display content of currently active tab
-                document.getElementById(tabName).style.display = "block";
-                // change styling for currently active tab
-                event.currentTarget.className += " active";
-            }
-
-            $(function() {
-                $('[id$="-include"]').each(function(e) {
-                    $(this).load(
-                        "includes\\" +
-                            $(this)
-                                .attr("id")
-                                .replace("-include", "") +
-                            ".html"
-                    );
-                });
-            });
-        </script>
+        <!-- Reference to Javascript for tab navigation functionality -->
+        <script
+            type="text/javascript"
+            src="https://cdn.statically.io/gh/snusisa/SISA-Website/master/tab.js"
+            crossorigin
+        ></script>
 
         <!-- Navigation Tab View -->
         <div class="tabs">
@@ -72,13 +43,14 @@
             </div>
             <div class="tab-content">
                 <div id="tab1" class="tab-item">
-                    <script src="https://cdn.statically.io/gh/snusisa/SISA-Website/22eac485/AboutUs/ExecutiveCommittee/ExecutiveCommittee.js"></script>
+                    <script src="https://cdn.statically.io/gh/snusisa/SISA-Website/master/AboutUs/ExecutiveCommittee/ExecutiveCommittee.js"></script>
                 </div>
                 <div id="tab2" class="tab-item" style="display:none">
-                    <script src="https://cdn.statically.io/gh/snusisa/SISA-Website/22eac485/AboutUs/PresidentGreeting/PresidentGreeting.js"></script>
+                    <script src="https://cdn.statically.io/gh/snusisa/SISA-Website/master/AboutUs/PresidentGreeting/PresidentGreeting.js"></script>
                 </div>
                 <div id="tab3" class="tab-item" style="display:none">
                     <!-- TODO -->
+                    <!-- Add new tab content here by referencing an external script -->
                     <h3 style="text-align: center;">Add tab content here</h3>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+document.write(`<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Convenience Stores and Marts</title>
@@ -199,3 +199,4 @@
         <div class="reference">Last updated by: Team SISA (August 2019)</div>
     </div>
 </html>
+`);
