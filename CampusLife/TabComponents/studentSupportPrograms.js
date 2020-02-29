@@ -10,6 +10,8 @@ document.write(`<!DOCTYPE html>
     <title>Student Support Programs</title>
     </head>
     <div class="table-body">
+        <!-- Reference to external css file -->
+        <link rel="stylesheet" type="text/css" href="./style.css" />
         <p>
             Looking for ways to enhance your college experience? There are a
             wide range of student services offered in SNU to provide academic
