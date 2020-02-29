@@ -10,8 +10,6 @@ document.write(`<!DOCTYPE html>
         <title>Cafeterias and Restaurants</title>
     </head>
     <div class="table-body">
-        <!-- Reference to external css file -->
-        <link rel="stylesheet" type="text/css" href="./style.css" />
         <p>
             SNU has over 30 cafeterias and restaurants on Gwanak campus. There
             are a wide variety of options to choose from, ranging from
